@@ -1,0 +1,31 @@
+<div role="form">
+  <div class="box-body">
+    <field id="name" label="Nome" grid="12 6 4" readonly="bcCtrl.tabDelete" placeholder="Informe o Nome" model="bcCtrl.billingCycle.name"></field>
+    <field id="month" label="Mês" grid="12 6 4" readonly="bcCtrl.tabDelete" placeholder="Informe o Mês" model="bcCtrl.billingCycle.month" type="number"></field>
+    <field id="year" label="Ano" grid="12 6 4" readonly="bcCtrl.tabDelete" placeholder="Informe o Ano" model="bcCtrl.billingCycle.year" type="number"></field>
+    <div class="col-xs-12">
+      <fieldset>
+        <legend>Resumo</legend>
+          <div ng-include="'billingCycle/summary.html'"></div>
+      </fieldset>
+    </div>
+    <div class="col-xs-12 col-sm-6 box-body">
+      <fieldset>
+        <legend>Créditos</legend>
+        <div ng-include="'billingCycle/creditList.html'"></div>
+      </fieldset>
+    </div>
+    <div class="col-xs-12 col-sm-6 box-body">
+      <fieldset>
+        <legend>Débitos</legend>
+        <div ng-include="'billingCycle/debtList.html'"></div>
+      </fieldset>
+    </div>
+  </div>
+  <div class="box-footer">
+    <button ng-if="bcCtrl.tabCreate" class="btn btn-primary" ng-click="bcCtrl.create()">Incluir</button>
+    <button ng-if="bcCtrl.tabUpdate" ng-click="bcCtrl.update()" class="btn btn-info">Alterar</button>
+    <button ng-if="bcCtrl.tabDelete" ng-click="bcCtrl.delete()" class="btn btn-danger">Excluir</button>
+    <button ng-click="bcCtrl.refresh()" class="btn btn-default">Cancelar</button>
+  </div>
+</div>
